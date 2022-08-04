@@ -26,5 +26,15 @@ User.init({
         }
     }
 }, {
-    sequelize: require()
-})
+    sequelize: require('../config/connection'),
+    modelName: 'user',
+    hooks: {
+        async beforeCreate(user) {
+            const hashed_password = await bcrypt.hash(user.password, 10);
+        }
+    }
+});
+
+User.prototype.validatePassword = async function (password, stored_password) {
+    return await bcrypt.compare(password, stored_password)
+};
