@@ -1,0 +1,4 @@
+DROP DATABASE IF EXISTS fitspace_db;
+
+CREATE DATABASE fitspace_db
+
