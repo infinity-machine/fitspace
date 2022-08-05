@@ -24,7 +24,7 @@ view_router.get('/', isLoggedIn, (req, res) => {
 });
 
 view_router.get('/login', isLoggedIn, (req, res) => {
-    res.render('login', {errors: req.session});
+    res.render('login', {errors: req.session.errors});
 });
 
 view_router.get('/register', isLoggedIn, (req, res) => {

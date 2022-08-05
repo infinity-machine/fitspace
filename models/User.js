@@ -26,11 +26,12 @@ User.init({
         }
     }
 }, {
-    sequelize: require('../config/connection'),
+    sequelize: require('../config/db_connection'),
     modelName: 'user',
     hooks: {
         async beforeCreate(user) {
             const hashed_password = await bcrypt.hash(user.password, 10);
+            user.password = hashed_password;
         }
     }
 });

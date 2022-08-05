@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const { engine } = require('express-handlebars');
 const PORT = process.env.PORT || 3333;
-const db = require('./config/connection');
+const db = require('./config/db_connection');
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 require('dotenv').config();
@@ -20,12 +20,12 @@ app.use(session({
     saveUninitialized: false,
     resave: false,
     cookie: {
-        httpOnly: true
+        // httpOnly: true
     }
 }));
 
 app.use('/', view_routes);
 app.use('/auth', auth_routes);
-db.sync().then(() => {
+db.sync({force: true}).then(() => {
     app.listen(PORT, () => console.log(`LISTENING ON PORT ${PORT}`));
 });
