@@ -1,5 +1,5 @@
 const view_router = require('express').Router();
-const { isLoggedIn } = require('.helpers');
+const { isLoggedIn } = require('./helpers');
 const User = require('../models/User');
 
 view_router.get('/', isLoggedIn, (req, res) => {

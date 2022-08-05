@@ -38,3 +38,5 @@ User.init({
 User.prototype.validatePassword = async function (password, stored_password) {
     return await bcrypt.compare(password, stored_password)
 };
+
+module.exports = User;
