@@ -1,7 +1,7 @@
 {
   "name": "project2",
   "version": "1.0.0",
-  "description": "",
+  "description": "[![License](https://img.shields.io/badge/License-Apache_2.0-yellowgreen.svg)](https://opensource.org/licenses/Apache-2.0)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -27,6 +27,7 @@
     "express-session": "^1.17.3",
     "handlebars": "^4.7.7",
     "mysql2": "^2.3.3",
+    "node": "^18.7.0",
     "sequelize": "^6.21.3"
   }
 }
