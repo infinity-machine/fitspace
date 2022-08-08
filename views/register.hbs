@@ -1,0 +1,15 @@
+{{#if errors}}
+  <div class="errors">
+    {{#each errors}}
+      <p class="error">{{this}}</p>
+    {{/each}}
+  </div>
+{{/if}}
+
+<form action="/auth/register" method="post">
+  <h3>Register</h3>
+  <input name="username" type="text" placeholder="Enter your username">
+  <input name="email" type="email" placeholder="Enter your email address">
+  <input name="password" type="password" placeholder="Enter your password">
+  <button>Submit</button>
+</form>
