@@ -55,7 +55,7 @@ auth_router.post('/login', isLoggedIn, (req, res) => {
         }
         req.session.save(() => {
             req.session.user_id = user.id
-            res.redirect('/l');
+            res.redirect('/');
         });
     });
 });
