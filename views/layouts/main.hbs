@@ -13,19 +13,25 @@
 
 <body>
   <header>
-    <nav>
-      <div class="nav-wrapper indigo accent-4">
         {{!-- <a href="/" class="brand-logo"><i class="material-icons"></i>FitSpace</a> --}}
         {{#if user}}
-        <span class="email">{{user.email}}</span>
-        <a href="/auth/logout">Log Out</a>
+        <nav>
+           <div class="nav-wrapper blue accent-4">
+            <div class="right"> 
+              <span class="email">{{user.email}}</span>
+              <a class="waves-effect waves-light orange lighten-2 btn blue-text text-darken-2" href="/auth/logout"><i class="material-icons right"></i>Log Out</a>
+            </div>
+           </div></nav>
         {{else}}
-        <a href="/login">Log In</a>
-        <span>or</span>
-        <a href="/register">Register</a>
+        <nav>
+           <div class="nav-wrapper blue accent-4">
+              <div class="right"> 
+                <a class="waves-effect waves-light orange lighten-2 btn blue-text text-darken-2" href="/login"><i class="material-icons right"></i>Log In</a>
+                <span>or</span>
+                <a class="waves-effect waves-light orange lighten-2 btn blue-text text-darken-2" href="/register">Register</a>
+              </div>
+           </div></nav>
       {{/if}}
-      </div>
-    </nav>
   </header>
 
 

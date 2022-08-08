@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/kingSHLERM/project2#readme",
   "dependencies": {
+    "axios": "^0.27.2",
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.4",
     "dotenv": "^16.0.1",

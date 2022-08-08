@@ -3,21 +3,86 @@
 
     <h1>LOGGED IN</h1>
 
+<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">sidenav</i></a> 
 
-{{!-- <h3>Welcome {{#if user}}{{user.username}}{{else}}Guest{{/if}}</h3> --}}
+  <ul id="slide-out" class="sidenav">
+    <div><i>Click Search Method Below</i></div>
 
 <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">sidenav</i></a>
 
+    <li><a class="waves-effect dropdown-trigger" href="#!" data-target="Equipment">Search by Equipment</a></li>
+        <ul id='Equipment' class='dropdown-content'>
+            <li id="E0">assisted</li>
+            <li id="E1">band</li>
+            <li id="E2">barbell</li>
+            <li id="E3">body weight</li>
+            <li id="E4">bosu ball</li>
+            <li id="E5">cable</li>
+            <li id="E6">dumbbell</li>
+            <li id="E7">elliptical machine</li>
+            <li id="E8">ez barbell</li>
+            <li id="E9">hammer</li>
+            <li id="E10">kettlebell</li>
+            <li id="E11">leverage machine</li>
+            <li id="E12">medicine ball</li>
+            <li id="E13">olympic barbell</li>
+            <li id="E14">resistance band</li>
+            <li id="E15">roller</li>
+            <li id="E16">rope</li>
+            <li id="E17">skierg machine</li>
+            <li id="E18">sled machine</li>
+            <li id="E19">smith machine</li>
+            <li id="E20">stability ball</li>
+            <li id="E21">stationary bike</li>
+            <li id="E22">stepmill machine</li>
+            <li id="E23">tire</li>
+            <li id="E24">trap bar</li>
+            <li id="E25">upper body ergometer</li>
+            <li id="E26">weighted</li>
+            <li id="E27">wheel roller</li>
+        </ul>
+    
+    <li><a class="waves-effect dropdown-trigger" href="#!" data-target="BodyPart">Target Body Part</a></li>
+        <ul id='BodyPart' class='dropdown-content'>
+            <li id="B0">Back</li>
+            <li id="B1">Cardio</li>
+            <li id="B2">Chest</li>
+            <li id="B3">Lower Arms</li>
+            <li id="B4">Lower Legs</li>
+            <li id="B5">Neck</li>
+            <li id="B6">Shoulders</li>
+            <li id="B7">Upper Arms</li>
+            <li id="B8">Upper Legs</li>
+            <li id="B9">Waist</li>
+        </ul>
+  
+    <li><a class="waves-effect dropdown-trigger" href="#!" data-target="TargetMuscle">Target Muscle Group</a></li>
+        <ul id='TargetMuscle' class='dropdown-content'>
+            <li id="M0">Abductors</li>
+            <li id="M1">ABS</li>
+            <li id="M2">Adductors</li>
+            <li id="M3">Biceps</li>
+            <li id="M4">Calves</li>
+            <li id="M5">Cardiovascular System</li>
+            <li id="M6">Delts</li>
+            <li id="M7">Forearms</li>
+            <li id="M8">Glutes</li>
+            <li id="M9">Hamstrings</li>
+            <li id="M10">Lats</li>
+            <li id="M11">Levator Scapulae</li>
+            <li id="M12">Pectorals</li>
+            <li id="M13">Quads</li>
+            <li id="M14">Serratus Anterior</li>
+            <li id="M15">Spine</li>
+            <li id="M16">Traps</li>
+            <li id="M17">Triceps</li>
+            <li id="M18">Upper Back</li>
+        </ul>
 
-<ul id="slide-out" class="sidenav">
-  <div><i>Here is gonna be the information about the app</i></div>
-  {{!-- Insert exercises after this tag --}}
-<li><a href="#!">First Link</a></li>
-<li><a href="#!">Second Link</a></li>
-<li><div class="divider"></div></li>
-<li><a class="subheader">Subheader</a></li>
-<li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-</ul>
+  </ul>
+
+
+
 
 
   {{else}}
