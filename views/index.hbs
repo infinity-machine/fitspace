@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
-</head>
-<body>
-        
+
     <h3>Welcome {{#if user}}{{user.username}}{{else}}Guest{{/if}}</h3>
 
  <nav><a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">sidenav</i></a> </nav>
@@ -25,14 +14,3 @@
   </ul>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="../browser/app.js"></script>
-</body>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        M.AutoInit();
-    });
-</script>
-
-</html>
