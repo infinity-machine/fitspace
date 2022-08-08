@@ -1,13 +1,10 @@
+{{#if user}}
 
-    {{!-- <h3>Welcome {{#if user}}{{user.username}}{{else}}Guest{{/if}}</h3> --}}
+<h1>LOGGED IN</h1>
 
-    {{#if user}}
+<nav><a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">sidenav</i></a> </nav>
 
-    <h1>LOGGED IN</h1>
-
- <nav><a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">sidenav</i></a> </nav>
-
-  <ul id="slide-out" class="sidenav">
+<ul id="slide-out" class="sidenav">
     <div><i>Here is gonna be the information about the app</i></div>
     {{!-- Insert exercises after this tag --}}
     <li><a href="#!">First Link</a></li>
@@ -17,12 +14,9 @@
     </li>
     <li><a class="subheader">Subheader</a></li>
     <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-  </ul>
+</ul>
 
-  {{else}}
+{{else}}
+<h1>NOT LOGGED IN YET</h1>
 
-  <h1>NOT LOGGED IN YET</h1>
-
-  {{/if}}
-
-
+{{/if}}
