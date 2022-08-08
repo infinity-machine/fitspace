@@ -21,7 +21,7 @@ auth_router.post('/register', isLoggedIn, (req, res) => {
             .then(new_user => {
                 req.session.save(() => {
                     req.session.user_id = new_user.id;
-                    res.redirect('/')
+                    res.redirect('/');
                 });
             }).catch(err => {
                 console.log(err);
