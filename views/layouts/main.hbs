@@ -6,16 +6,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Express Session Handlebars</title>
+    <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
   <header>
-    <a href="/" class="logo">
-      <h3>FitSpace</h3>
-    </a>
     <nav>
-      {{#if user}}
+      <div class="nav-wrapper indigo accent-4">
+        <a href="/" class="brand-logo"><i class="material-icons"></i>FitSpace</a>
+        {{#if user}}
         <span class="email">{{user.email}}</span>
         <a href="/auth/logout">Log Out</a>
         {{else}}
@@ -23,14 +24,21 @@
         <span>or</span>
         <a href="/register">Register</a>
       {{/if}}
+      </div>
     </nav>
   </header>
+
+
+
 
   <main>
     {{{body}}}
   </main>
 
   <script src="js/browser.js"></script>
+
+      <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 
 </html>
