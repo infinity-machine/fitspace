@@ -1,5 +1,9 @@
 
-    <h3>Welcome {{#if user}}{{user.username}}{{else}}Guest{{/if}}</h3>
+    {{!-- <h3>Welcome {{#if user}}{{user.username}}{{else}}Guest{{/if}}</h3> --}}
+
+    {{#if user}}
+
+    <h1>LOGGED IN</h1>
 
  <nav><a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">sidenav</i></a> </nav>
 
@@ -12,5 +16,11 @@
     <li><a class="subheader">Subheader</a></li>
     <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
   </ul>
+
+  {{else}}
+
+  <h1>NOT LOGGED IN YET</h1>
+
+  {{/if}}
 
 
