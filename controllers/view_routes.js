@@ -8,7 +8,7 @@ view_router.get('/', isLoggedIn, (req, res) => {
     if (user_id) {
         return User.findOne({
             where: {
-                user_id
+                id: user_id
             },
             attributes: ['id', 'email', 'username']
         })
