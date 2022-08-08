@@ -9,7 +9,9 @@ require('dotenv').config();
 const { view_routes, auth_routes } = require('./controllers/index');
 
 const app = express();
-app.use(express.static(path.join('browser')));
+
+app.use(express.static(path.join('browser')));  
+
 app.engine('hbs', engine({ extname: '.hbs' }));
 app.set('view engine', 'hbs');
 app.use(express.json());
