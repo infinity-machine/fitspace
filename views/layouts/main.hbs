@@ -3,33 +3,40 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Express Session Handlebars</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <link rel="icon" href="./css/img/fitness.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/dist/output.css">
+    <title>WORKOUT APP!</title>
 </head>
 
-<body>
-  <header>
-    <a href="/" class="logo">
-      <h3>Express Auth Example</h3>
-    </a>
-    <nav>
-      {{#if user}}
-        <span class="email">{{user.email}}</span>
-        <a href="/auth/logout">Log Out</a>
+<body class=" font-Source_Sans_Pro ">
+  <header class="bg-blue_WA ">
+        <nav class="container bg-blue_WA flex items-center py-4 ">
+            <div class="py-1"><img class="cursor-pointer object-contain h-10 w-20" src="./css/img/fitness.jpg" alt=""></div>
+            <h1>Keep Fit Web</h1>
+            <ul class="hidden sm:flex flex-1 justify-end items-center gap-12 uppercase text-xs">
+                <li class="cursor-pointer">Features</li>
+                <li class="cursor-pointer">contact</li>
+                <button type="button" class="uppercase bg-orange-300 border-2 border-white text-white rounded-md px-7 py-3">{{#if user}}
+          <span class="email">{{user.email}}</span>
+          <a href="/auth/logout">Log Out</a>
         {{else}}
-        <a href="/login">Log In</a>
-        <span>or</span>
-        <a href="/register">Register</a>
-      {{/if}}
-    </nav>
-  </header>
+          <a href="/login">Log In</a>
+          <span>or</span>
+          <a href="/register">Register</a>
+        {{/if}}</button>
+            </ul>
+            <div class="flex sm:hidden flex-1 justify-end"><i class="text-2xl fas fa-bars"></i></div>
+        </nav>
+    </header>
 
   <main>
     {{{body}}}
   </main>
 
+  {{!-- <script src="https://cdn.tailwindcss.com"></script> --}}
   <script src="js/browser.js"></script>
 </body>
 
