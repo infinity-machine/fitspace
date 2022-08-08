@@ -1,5 +1,27 @@
-<h1>{{#if user}}WELCOME {{user.username}}{{/if}}</h1>
+
+    <h3>Welcome {{#if user}}{{user.username}}{{else}}Guest{{/if}}</h3>
+
+ <nav><a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">sidenav</i></a> </nav>
+
+  <ul id="slide-out" class="sidenav">
+    <div><i>Here is gonna be the information about the app</i></div>
+    {{!-- Insert exercises after this tag --}}
+    <li><a href="#!">First Link</a></li>
+    <li><a href="#!">Second Link</a></li>
+    <li><div class="divider"></div></li>
+    <li><a class="subheader">Subheader</a></li>
+    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+  </ul>
 
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="../browser/app.js"></script>
+</body>
 
-{{!-- <h3>Welcome {{#if user}}{{user.username}}{{else}}Guest{{/if}}</h3> --}}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        M.AutoInit();
+    });
+</script>
+
+
