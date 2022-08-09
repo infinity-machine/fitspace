@@ -28,10 +28,13 @@ var eq_ul = document.getElementById('Equipment');
 var bp_ul = document.getElementById('BodyPart')
 var tm_ul = document.getElementById('TargetMuscle')
 var trigger = document.getElementById('trigger')
+trigger.addEventListener('click', generateDropdownList)
 
 // GENERATE DROPDOWN LISTS
 function generateDropdownList() {
-
+eq_ul.innerHTML = '';
+bp_ul.innerHTML = '';
+tm_ul.innerHTML = '';
     // EQUIPMENT DROPDOWN
     for (i = 0; i < equipment.length; i++) {
         eq_li = document.createElement('li')
@@ -118,5 +121,3 @@ function fetchWorkout() {
         })
         .catch(err => console.error(err));
 }
-
-generateDropdownList()
