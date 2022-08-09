@@ -1,0 +1,27 @@
+
+<h1>SAVED WORKOUTS</h1>
+
+    <p>{{user_data}}</p>
+
+  <div id="cardContainer" class="row"></div>
+
+    {{#each user_data.saved as |workout| }} 
+
+        <div class="col s3" >
+                <div class="card">
+                    <div class= "card-content">
+                        <h5>{{workout.name}} </h5>
+                    </div>
+                    <div class="card-image">
+                        <img src={{workout.gifUrl}}>
+                    </div>
+                    <div class="card-content">
+                        <p>BodyPart: {{workout.bodyPart}} </p>
+                        <p>Equipment: {{workout.equipment}} </p>
+                    </div>
+                </div>
+            </div>
+
+    {{/each}}
+
+  </div>

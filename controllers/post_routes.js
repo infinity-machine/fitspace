@@ -5,8 +5,6 @@ const Saved = require('../models/Saved')
 
     post_router.post('/save', (req, res) => {
 
-        // User.findByPk(req.session.user_id,{include: Saved}).then(user => {
-    
         User.findByPk(req.session.user_id).then(user => {
             user.createSaved(
                 {
@@ -24,19 +22,4 @@ const Saved = require('../models/Saved')
         })
     })
 
-
-  //  //---------------------------ATTEMPT AT GETTING SAVED ATTACHED TO USER----------------------------------
-    // post_router.get('/findsaved', (req, res) => {
-
-    //     User.findByPk(req.session.user_id,
-    //         {
-    //             include: Saved
-
-    //         }).then(saved => {
-    //             res.json(saved)
-    //             console.log(saved)
-    //         })
-    //     })
-
-    
 module.exports = post_router
