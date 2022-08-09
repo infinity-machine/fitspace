@@ -44,15 +44,15 @@ auth_router.post('/login', isLoggedIn, (req, res) => {
         }
     }).then(async user => {
         if (!user) {
-            req.session.errors = ['NO ACCOUNT FOUND MATCHING THAT EMAIL'];
-            return res.redirect('/login');
-        }
+      req.session.errors = ['No user account found matching that email address.'];
+      return res.redirect('/login');
+    }
 
         const pass_is_valid = await user.validatePassword(password, user.password);
         if (!pass_is_valid) {
-            req.session.errors = ['YOUR PASSWORD IS INCORRECT'];
+            req.session.errors = ['Your password is incorrect'];
             res.redirect('/login');
-        }
+          }
         req.session.save(() => {
             req.session.user_id = user.id
             res.redirect('/');

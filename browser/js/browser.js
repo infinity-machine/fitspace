@@ -5,9 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // Carousel and Initialization
-
 var instance = M.Carousel.init({
-
     fullWidth: true,
     indicators: true
 });
@@ -81,7 +79,7 @@ var cardContainer = document.getElementById('cardContainer')
 //   }
 // })
 
-function myFuncConsole(data){
+function myFuncConsole(data) {
     let val = data.target.dataset
     let testObj = {
         bodyPart: val.bodypart,
@@ -110,46 +108,42 @@ function myFuncConsole(data){
 
 // CREATE MULTIPLE WORKOUT CARDS
 function createCards(data) {
-
     cardContainer.innerHTML = '';
-
     for (i = 0; i < data.length; i++) {
         document.getElementById("cardContainer").innerHTML += `
-            <div class="col s3" >
-                <div class="card">
-                    <div class= "card-content">
-                        <h5>${data[i].name} </h5>
-                    </div>
-                    <div class="card-image">
-                        <img src="${data[i].gifUrl}">
-                    </div>
-                    <div class="card-content">
-                        <p>BodyPart: ${data[i].bodyPart} </p>
-                        <p>Equipment: ${data[i].equipment} </p>
-                    </div>
-                    <button class="saveBtn" data-bodyPart="${data[i].bodyPart}" data-equipment="${data[i].equipment}" data-gifUrl="${data[i].gifUrl}" data-id="${data[i].id}" data-name="${data[i].name}" data-target="${data[i].target}"  onClick="myFuncConsole(event)">SAVE</button>
+    
+            <div class="card card-div col 3">
+                <div class="card-content">
+                  <span class="card-title activator grey-text text-darken-4">${data[i].name}<i class="material-icons right">more_vert</i></span>
+                </div>
+                <div class="card-image waves-effect waves-block waves-light">
+                  <img class="activator" src="${data[i].gifUrl}">
+                </div>
+                <div class="card-reveal">
+                  <span class="card-title grey-text text-darken-4">${data[i].name}<i class="material-icons right">close</i></span>
+                  <p>${data[i].bodyPart}</p>
+                  <p>${data[i].equipment}</p>
                 </div>
             </div>`
-        }
-        // ElSaveBtn = document.querySelector('#cardContainer');
-        // // console.log(ElSaveBtn)
-        // ElSaveBtn.addEventListener('click', (data) => {
-        //     console.log(event)
-        //     console.log('clicked')
-        //     })
-        // function myFuncConsole(data){
-        //     console.log(data)
-        // }
+
+    }
+    // ElSaveBtn = document.querySelector('#cardContainer');
+    // // console.log(ElSaveBtn)
+    // ElSaveBtn.addEventListener('click', (data) => {
+    //     console.log(event)
+    //     console.log('clicked')
+    //     })
+    // function myFuncConsole(data){
+    //     console.log(data)
+    // }
 }
 
 // FETCH WORKOUT
 function fetchWorkout() {
-
-    function formatSelection (selection) {
-        let new_string = selection.replace(/ /g,'%20')
+    function formatSelection(selection) {
+        let new_string = selection.replace(/ /g, '%20')
         return new_string
     }
-    
     let id = event.target.id
     let index = id.slice(1)
     let url = 'https://exercisedb.p.rapidapi.com/exercises'
@@ -160,7 +154,7 @@ function fetchWorkout() {
             'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
         }
     };
-    
+
     if (id[0] === "E") {
         url += '/equipment/' + formatSelection(equipment[index])
     } else if (id[0] === "M") {
@@ -172,10 +166,8 @@ function fetchWorkout() {
     fetch(url, options)
         .then(response => response.json())
         .then(response => {
-            console.log(response)
             createCards(response)
         })
         .catch(err => console.error(err));
 }
 
-// generateDropdownList()
