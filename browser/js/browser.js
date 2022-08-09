@@ -24,9 +24,10 @@ var eq_ul = document.getElementById('Equipment');
 var bp_ul = document.getElementById('BodyPart')
 var tm_ul = document.getElementById('TargetMuscle')
 var trigger = document.getElementById('trigger')
-var cardContainer = document.getElementById('cardContainer')
+
 // GENERATE DROPDOWN LISTS
 function generateDropdownList() {
+
     // EQUIPMENT DROPDOWN
     for (i = 0; i < equipment.length; i++) {
         eq_li = document.createElement('li')
@@ -55,6 +56,9 @@ function generateDropdownList() {
         bp_li.addEventListener('click', fetchWorkout)
     }
 }
+// CREATE SINGLE WORKOUT CARD
+var cardContainer = document.getElementById('cardContainer')
+
 function myFuncConsole(data) {
     let val = data.target.dataset
     let testObj = {
@@ -96,7 +100,6 @@ function createCards(data) {
                   <button class="saveBtn" data-bodyPart="${data[i].bodyPart}" data-equipment="${data[i].equipment}" data-gifUrl="${data[i].gifUrl}" data-id="${data[i].id}" data-name="${data[i].name}" data-target="${data[i].target}"  onClick="myFuncConsole(event)">SAVE</button>
                 </div>
             </div>`
-
     }
 }
 
@@ -133,4 +136,4 @@ function fetchWorkout() {
         .catch(err => console.error(err));
 }
 
-generateDropdownList();
+generateDropdownList()

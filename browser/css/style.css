@@ -22,7 +22,9 @@ main {
   margin: 12px;
 }
 
-.card-div {}
+.card-div {
+  
+}
 
 .card-title {
   color: black !important;
