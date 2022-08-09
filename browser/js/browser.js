@@ -92,3 +92,4 @@ function fetchWorkout() {
         .catch(err => console.error(err));
 
 }
+
