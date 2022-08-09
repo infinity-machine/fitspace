@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // Carousel and Initialization
-$('.carousel.carousel-slider').carousel({
+var instance = M.Carousel.init({
     fullWidth: true,
     indicators: true
   });
@@ -29,6 +29,7 @@ var eq_ul = document.getElementById('Equipment');
 var bp_ul = document.getElementById('BodyPart')
 var tm_ul = document.getElementById('TargetMuscle')
 // EQUIPMENT DROPDOWN
+
 for (i = 0; i < equipment.length; i++) {
     eq_li = document.createElement('li')
     eq_li.setAttribute('id', `E${i}`)
@@ -56,6 +57,7 @@ for (i = 0; i < bodypart.length; i++) {
 
 // CREATE SINGLE WORKOUT CARD
 var cardContainer = document.getElementById('cardContainer')
+
 function createCard(data) {
     var workoutCard = document.createElement('div');
     var cardname = document.createElement('p')
@@ -72,6 +74,7 @@ function createCard(data) {
     workoutCard.appendChild(cardgif)
     cardContainer.appendChild(workoutCard)
 }
+
 // CREATE MULTIPLE WORKOUT CARDS
 function createCards(data) {
     for (i = 0; i < data.length; i++) {
@@ -80,7 +83,24 @@ function createCards(data) {
 }
 // FETCH WORKOUT
 function fetchWorkout() {
+
+    function formatSelection (selection) {
+        let new_string = selection.replace(/ /g,'%20')
+        return new_string
+    }
+
     console.log(event.target)
+
+    let id = event.target.id
+    let index = id.slice(1)
+    
+    if (id[0] === "E") {
+        get_exercises('/equipment/', equipment[index])
+    } else if (id[0] === "M") {
+        get_exercises('/target/', targetMuscle[index])
+    } else if (id[0] === "B") {
+        get_exercises('/bodypart/', bodypart[index])
+    }
 
     const options = {
         method: 'GET',
@@ -90,10 +110,15 @@ function fetchWorkout() {
         }
     };
 
-    fetch('https://exercisedb.p.rapidapi.com/exercises/target/levator%20scapulae', options)
+
+    let url = 'https://exercisedb.p.rapidapi.com/exercises'
+    url += api_call + formatSelection(selection)
+
+
+    fetch(url, options)
         .then(response => response.json())
         .then(response => {
-           console.log(response)
+        //    console.log(response)
            createCards(response)
         })
         .catch(err => console.error(err));
