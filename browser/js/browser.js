@@ -29,9 +29,10 @@ var eq_ul = document.getElementById('Equipment');
 var bp_ul = document.getElementById('BodyPart')
 var tm_ul = document.getElementById('TargetMuscle')
 var trigger = document.getElementById('trigger')
-trigger.addEventListener('click', generateDropdownList)
+// trigger.addEventListener('click', generateDropdownList)
 
 function generateDropdownList() {
+
     // EQUIPMENT DROPDOWN
     for (i = 0; i < equipment.length; i++) {
         eq_li = document.createElement('li')
@@ -59,6 +60,7 @@ function generateDropdownList() {
 }
 // CREATE SINGLE WORKOUT CARD
 var cardContainer = document.getElementById('cardContainer')
+
 function createCard(data) {
     var workoutCard = document.createElement('div');
     var cardname = document.createElement('p')
@@ -75,8 +77,12 @@ function createCard(data) {
     workoutCard.appendChild(cardgif)
     cardContainer.appendChild(workoutCard)
 }
+
 // CREATE MULTIPLE WORKOUT CARDS
 function createCards(data) {
+
+    cardContainer.innerHTML = '';
+
     for (i = 0; i < data.length; i++) {
         createCard(data[i])
     }
@@ -103,4 +109,4 @@ function fetchWorkout() {
 
 }
 
-
+generateDropdownList();
