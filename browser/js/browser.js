@@ -24,14 +24,9 @@ var eq_ul = document.getElementById('Equipment');
 var bp_ul = document.getElementById('BodyPart')
 var tm_ul = document.getElementById('TargetMuscle')
 var trigger = document.getElementById('trigger')
-trigger.addEventListener('click', generateDropdownList)
 
 // GENERATE DROPDOWN LISTS
 function generateDropdownList() {
-    eq_ul.innerHTML = '';
-    bp_ul.innerHTML = '';
-    tm_ul.innerHTML = '';
-
 
     // EQUIPMENT DROPDOWN
     for (i = 0; i < equipment.length; i++) {
@@ -64,23 +59,6 @@ function generateDropdownList() {
 // CREATE SINGLE WORKOUT CARD
 var cardContainer = document.getElementById('cardContainer')
 
-//Save Button 
-// const ElSaveBtn = document.querySelector('.saveBtn');
-
-// ElSaveBtn.addEventListener('click', async _ => {
-//   try {     
-//     const response = await fetch('/save', {
-//       method: 'post',
-//       body: {
-//         // Your body
-//       }
-//     });
-//     console.log('Completed!', response);
-//   } catch(err) {
-//     console.error(`Error: ${err}`);
-//   }
-// })
-
 function myFuncConsole(data) {
     let val = data.target.dataset
     let testObj = {
@@ -92,8 +70,6 @@ function myFuncConsole(data) {
         target: val.target,
     }
 
-    // console.log(testObj)
-
     fetch('/posts/save', {
         method: 'post',
         headers: {
@@ -103,10 +79,7 @@ function myFuncConsole(data) {
     }).then(res => {
         console.log("Request complete! response:", res)
     })
-
-
 }
-
 
 // CREATE MULTIPLE WORKOUT CARDS
 function createCards(data) {
@@ -127,7 +100,6 @@ function createCards(data) {
                   <p>Equipment: ${data[i].equipment}</p>
                 </div>
             </div>`
-
     }
 }
 
@@ -164,3 +136,4 @@ function fetchWorkout() {
         .catch(err => console.error(err));
 }
 
+generateDropdownList()
