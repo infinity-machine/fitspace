@@ -1,11 +1,12 @@
 
 .appTitle {
+    padding: 25px;
     text-align: center;
 }
-
 .carousel {
-    height: 1250px !important;
+    height: 800px !important;
 }
+
 .btn{
     margin: 12px;
 }
