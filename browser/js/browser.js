@@ -13,7 +13,6 @@ var instance = M.Carousel.init({
 var instance = M.Carousel.init({
     fullWidth: true
 });
-
 // DROPDOWN ARRAYS
 const equipment = ["assisted", "band", "barbell", "body weight", "bosu ball", "cable", "dumbbell", "elliptical machine", "ez barbell", "hammer", "kettlebell", "leverage machine",
     "medicine ball", "olympic barbell", "resistance band", "roller", "rope", "skierg machine", "sled machine", "smith machine", "stability ball", "stationary bike",
@@ -31,6 +30,7 @@ var tm_ul = document.getElementById('TargetMuscle')
 var trigger = document.getElementById('trigger')
 // trigger.addEventListener('click', generateDropdownList)
 
+// GENERATE DROPDOWN LISTS
 function generateDropdownList() {
 
     // EQUIPMENT DROPDOWN
@@ -83,6 +83,7 @@ function createCards(data) {
 
     cardContainer.innerHTML = '';
 
+
     for (i = 0; i < data.length; i++) {
         createCard(data[i])
     }
@@ -109,4 +110,4 @@ function fetchWorkout() {
 
 }
 
-generateDropdownList();
+generateDropdownList()
