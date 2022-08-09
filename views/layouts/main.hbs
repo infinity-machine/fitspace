@@ -14,7 +14,7 @@
 
 <body>
   <header>
-        <a href="/" class="brand-logo"><i class="material-icons"></i>FitSpace</a>
+        {{!-- <a href="/" class="brand-logo"><i class="material-icons"></i>FitSpace</a> --}}
         {{#if user}}
         <nav class="nav-extended">
            <div class="nav-wrapper blue accent-4 ">
@@ -22,8 +22,8 @@
             <a href="#!" class="brand-logo"><i class="material-icons">directions_run</i>FitSpace</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
-                  <li><a href="#"><i>About us</i></a></li>
-                  <li><a href="#"><i>References</i></a></li>
+                  <li><a href="#page-footer"><i>About us</i></a></li>
+                  <li><a href="#page-footer"><i>References</i></a></li>
                   <li><a href="#"><i><span class="email">{{user.email}}</span></i></a></li>
                   <li> <a class="waves-effect waves-light orange lighten-2 btn blue-text text-darken-2" href="/auth/logout"><i class="material-icons right"></i>Log Out</a></li>
                 </ul>
@@ -32,21 +32,88 @@
                <div class="nav-content orange lighten-2 ">
                 <ul class="tabs tabs-transparent ">
                   <li class="tab"><a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons blue-text text-darken-2" id="trigger">accessibility</i>EXERCISE</a> </li>
-                  <li class="tab"><a class="active blue-text text-darken-2" href="#test2">Dashboard</a></li>
+                  <li class="tab"><a class="active blue-text text-darken-2" href="Dashboard">Dashboard</a></li>
                   <li class="tab"><a class="blue-text text-darken-2" href="#test3">Saved Workouts</a></li>
                 </ul>
               </div>
           </nav>
 
           <ul class="sidenav right" id="mobile-demo">
-            <li><a href="#about"><i>About us</i></a></li>
-            <li><a href="#about"><i>References</i></a></li>
+            <li><a href="#page-footer"><i>Information</i></a></li>
+            <li><a href="#page-footer"><i>Support</i></a></li>
             <li><a href="#"><span class="email">{{user.email}}</span></a></li>
             <li> <a class="waves-effect waves-light orange lighten-2 btn blue-text text-darken-2" href="/auth/logout"><i class="material-icons right"></i>Log Out</a></li>
           </ul>
 
-            {{!-- <div id="test2" class="col s12">Test 2</div>
-            <div id="test3" class="col s12">Test 3</div> --}}
+
+      <div class="row col s12" id="Dashboard">
+        <div class="container">
+            <div class="col s12">
+                
+            <div class="row">
+                <div class="col s12 ">
+                <div class="card">
+                    <div class="card-image">
+                    <img src="https://cdn.pixabay.com/photo/2016/11/22/22/24/adult-1850925_960_720.jpg">
+                    <span class="card-title">Dashboard</span>
+                    </div>
+                    <div class="card-content">
+                    <p>I am a very simple card. I am good at containing small bits of information.
+                    I am convenient because I require little markup to use effectively.</p>
+                    </div>
+                    <div class="card-action">
+                    <a href="#">This is a link</a>
+                    </div>
+                </div>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="col s12">
+                <div class="row">
+                <div class="col s12 ">
+                <div class="card">
+                    <div class="card-image">
+                    <img src="https://cdn.pixabay.com/photo/2015/07/02/10/27/training-828764_1280.jpg">
+                    <span class="card-title">Work out name</span>
+                    </div>
+                    <div class="card-content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos dolorum doloremque magnam necessitatibus veniam incidunt adipisci, repudiandae vero aspernatu
+                        r iusto sunt odit doloribus numquam quidem voluptate recusandae non tempore? Fugit! </p>
+                    </div>
+                    <div class="card-action">
+                    <a href="#">This is a link</a>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="col s12">
+                <div class="row">
+                <div class="col s12 ">
+                <div class="card">
+
+                    <div class="card-content">
+                    <p>I am a very simple card. I am good at containing small bits of information.
+                    I am convenient because I require little markup to use effectively.</p>
+                    </div>
+                    <div class="card-action">
+                    <a href="#">This is a link</a>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+    </div>
+
+            <div id="test3" class="col s12">Test 3</div>
 
 
         {{else}}
@@ -77,7 +144,7 @@
 <footer id="page-footer" class="page-footer col s12 blue accent-4">
     <div class="container">
         <div class="row">
-            <div class="col l6 s12 about">
+            <div class="col l6 s12">
                 <h5 class="white-text">About us</h5>
                 <p class="grey-text text-lighten-4">We are a team of learning developers in the UofM full stack development coding course.</p>
             </div>
