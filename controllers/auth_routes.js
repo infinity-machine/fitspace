@@ -51,7 +51,7 @@ auth_router.post('/login', isLoggedIn, (req, res) => {
         const pass_is_valid = await user.validatePassword(password, user.password);
         if (!pass_is_valid) {
             req.session.errors = ['Your password is incorrect'];
-            res.redirect('/login');
+            return res.redirect('/login');
           }
         req.session.save(() => {
             req.session.user_id = user.id
