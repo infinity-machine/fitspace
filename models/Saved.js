@@ -27,11 +27,3 @@ Saved.belongsTo(User)
 
 
 module.exports = Saved;
-
-
-// bodyPart: "waist"
-// equipment: "wheel roller"
-// gifUrl: "http://d205bpvrqc9yn1.cloudfront.net/0857.gif"
-// id: "0857"
-// name: "wheel rollerout"
-// target: "abs"
