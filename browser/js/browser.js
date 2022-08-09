@@ -5,14 +5,13 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // Carousel and Initialization
+
 var instance = M.Carousel.init({
+
     fullWidth: true,
     indicators: true
 });
 
-var instance = M.Carousel.init({
-    fullWidth: true
-});
 // DROPDOWN ARRAYS
 const equipment = ["assisted", "band", "barbell", "body weight", "bosu ball", "cable", "dumbbell", "elliptical machine", "ez barbell", "hammer", "kettlebell", "leverage machine",
     "medicine ball", "olympic barbell", "resistance band", "roller", "rope", "skierg machine", "sled machine", "smith machine", "stability ball", "stationary bike",
@@ -32,9 +31,11 @@ trigger.addEventListener('click', generateDropdownList)
 
 // GENERATE DROPDOWN LISTS
 function generateDropdownList() {
-eq_ul.innerHTML = '';
-bp_ul.innerHTML = '';
-tm_ul.innerHTML = '';
+    eq_ul.innerHTML = '';
+    bp_ul.innerHTML = '';
+    tm_ul.innerHTML = '';
+
+
     // EQUIPMENT DROPDOWN
     for (i = 0; i < equipment.length; i++) {
         eq_li = document.createElement('li')
@@ -63,15 +64,56 @@ tm_ul.innerHTML = '';
 // CREATE SINGLE WORKOUT CARD
 var cardContainer = document.getElementById('cardContainer')
 
+//Save Button 
+// const ElSaveBtn = document.querySelector('.saveBtn');
+
+// ElSaveBtn.addEventListener('click', async _ => {
+//   try {     
+//     const response = await fetch('/save', {
+//       method: 'post',
+//       body: {
+//         // Your body
+//       }
+//     });
+//     console.log('Completed!', response);
+//   } catch(err) {
+//     console.error(`Error: ${err}`);
+//   }
+// })
+
+function myFuncConsole(data){
+    let val = data.target.dataset
+    let testObj = {
+        bodyPart: val.bodypart,
+        equipment: val.equipment,
+        gifUrl: val.gifurl,
+        id: val.id,
+        name: val.name,
+        target: val.target,
+    }
+
+    // console.log(testObj)
+
+    fetch('/posts/save', {
+        method: 'post',
+        headers: {
+            "content-type": "application/json"
+        },
+        body: JSON.stringify(testObj)
+    }).then(res => {
+        console.log("Request complete! response:", res)
+    })
+
+
+}
+
 
 // CREATE MULTIPLE WORKOUT CARDS
 function createCards(data) {
-
     cardContainer.innerHTML = '';
-
     for (i = 0; i < data.length; i++) {
         document.getElementById("cardContainer").innerHTML += `
-            <div class="col s3">
+            <div class="col s3" >
                 <div class="card">
                     <div class= "card-content">
                         <h5>${data[i].name} </h5>
@@ -83,18 +125,27 @@ function createCards(data) {
                         <p>BodyPart: ${data[i].bodyPart} </p>
                         <p>Equipment: ${data[i].equipment} </p>
                     </div>
+                    <button class="saveBtn" data-bodyPart="${data[i].bodyPart}" data-equipment="${data[i].equipment}" data-gifUrl="${data[i].gifUrl}" data-id="${data[i].id}" data-name="${data[i].name}" data-target="${data[i].target}"  onClick="myFuncConsole(event)">SAVE</button>
                 </div>
             </div>`
-    }
+        }
+        // ElSaveBtn = document.querySelector('#cardContainer');
+        // // console.log(ElSaveBtn)
+        // ElSaveBtn.addEventListener('click', (data) => {
+        //     console.log(event)
+        //     console.log('clicked')
+        //     })
+        // function myFuncConsole(data){
+        //     console.log(data)
+        // }
 }
+
 // FETCH WORKOUT
 function fetchWorkout() {
-
     function formatSelection (selection) {
         let new_string = selection.replace(/ /g,'%20')
         return new_string
     }
-    
     let id = event.target.id
     let index = id.slice(1)
     let url = 'https://exercisedb.p.rapidapi.com/exercises'
@@ -121,3 +172,4 @@ function fetchWorkout() {
         })
         .catch(err => console.error(err));
 }
+
