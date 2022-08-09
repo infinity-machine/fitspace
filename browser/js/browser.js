@@ -129,15 +129,6 @@ function createCards(data) {
             </div>`
 
     }
-    // ElSaveBtn = document.querySelector('#cardContainer');
-    // // console.log(ElSaveBtn)
-    // ElSaveBtn.addEventListener('click', (data) => {
-    //     console.log(event)
-    //     console.log('clicked')
-    //     })
-    // function myFuncConsole(data){
-    //     console.log(data)
-    // }
 }
 
 // FETCH WORKOUT
