@@ -5,14 +5,10 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // Carousel and Initialization
-$('.carousel.carousel-slider').carousel({
+  var instance = M.Carousel.init({
     fullWidth: true,
     indicators: true
   });
-
-var instance = M.Carousel.init({
-    fullWidth: true
-});
 
 // DROPDOWN ARRAYS
 const equipment = ["assisted", "band", "barbell", "body weight", "bosu ball", "cable", "dumbbell", "elliptical machine", "ez barbell", "hammer", "kettlebell", "leverage machine",
