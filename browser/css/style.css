@@ -1,24 +1,47 @@
 body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
 
-  main {
-    flex: 1 0 auto;
-  }
+main {
+  flex: 1 0 auto;
+}
 
 .appTitle {
-    padding: 25px;
-    text-align: center;
+  padding: 25px;
+  text-align: center;
 }
+
 .carousel {
 
-    height: 800px !important;
+  height: 800px !important;
 }
 
-.btn{
-    margin: 12px;
+.btn {
+  margin: 12px;
 }
 
+.card-div {}
 
+.card-title {
+  color: black !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: visible;
+}
+
+.card-image {
+  /* height: 50% */
+}
+
+.card-content {
+
+}
+
+.saveBtn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
