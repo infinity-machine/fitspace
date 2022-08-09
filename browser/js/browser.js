@@ -5,9 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // Carousel and Initialization
-
 var instance = M.Carousel.init({
-
     fullWidth: true,
     indicators: true
 });
@@ -113,7 +111,6 @@ function createCards(data) {
     cardContainer.innerHTML = '';
     for (i = 0; i < data.length; i++) {
         document.getElementById("cardContainer").innerHTML += `
-    
             <div class="card card-div col 3">
                 <div class="card-content">
                   <span class="card-title activator grey-text text-darken-4">${data[i].name}<i class="material-icons right">more_vert</i></span>
@@ -123,8 +120,9 @@ function createCards(data) {
                 </div>
                 <div class="card-reveal">
                   <span class="card-title grey-text text-darken-4">${data[i].name}<i class="material-icons right">close</i></span>
-                  <p>${data[i].bodyPart}</p>
-                  <p>${data[i].equipment}</p>
+                  <p>Body Part: ${data[i].bodyPart}</p>
+                  <p>Target Muscle: ${data[i].target}</p>
+                  <p>Equipment: ${data[i].equipment}</p>
                 </div>
             </div>`
 
@@ -160,6 +158,7 @@ function fetchWorkout() {
         .then(response => response.json())
         .then(response => {
             createCards(response)
+            console.log(response)
         })
         .catch(err => console.error(err));
 }

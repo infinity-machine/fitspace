@@ -22,7 +22,10 @@ User.init({
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-            len: 6
+            len: {
+                args: 4,
+                msg: 'Your password must be at least 6 characters in length.'
+            }
         }
     }
 }, {
@@ -30,8 +33,8 @@ User.init({
     modelName: 'user',
     hooks: {
         async beforeCreate(user) {
-            const hashed_password = await bcrypt.hash(user.password, 10);
-            user.password = hashed_password;
+            const hashed_pass = await bcrypt.hash(user.password, 10);
+            user.password = hashed_pass;
         }
     }
 });
