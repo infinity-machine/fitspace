@@ -3,6 +3,13 @@ document.addEventListener('DOMContentLoaded', function () { M.AutoInit() })
 document.addEventListener('DOMContentLoaded', function () {
     var elems = document.querySelectorAll('.dropdown-trigger');
 });
+
+// Carousel and Initialization
+$('.carousel.carousel-slider').carousel({
+    fullWidth: true,
+    indicators: true
+  });
+
 var instance = M.Carousel.init({
     fullWidth: true
 });
@@ -92,4 +99,5 @@ function fetchWorkout() {
         .catch(err => console.error(err));
 
 }
+
 
