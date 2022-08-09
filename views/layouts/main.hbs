@@ -14,6 +14,7 @@
   <header>
         <a href="/" class="brand-logo"><i class="material-icons"></i>FitSpace</a>
         {{#if user}}
+
         <nav>
            <div class="nav-wrapper blue accent-4">
             <div class="right"> 
@@ -21,6 +22,41 @@
               <a class="waves-effect waves-light orange lighten-2 btn blue-text text-darken-2" href="/auth/logout"><i class="material-icons right"></i>Log Out</a>
             </div>
            </div></nav>
+
+        <nav class="nav-extended">
+           <div class="nav-wrapper blue accent-4 ">
+          <div class="container">
+            <a href="#!" class="brand-logo"><i class="material-icons">directions_run</i>FitSpace</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                  <li><a href="#"><i>About us</i></a></li>
+                  <li><a href="#"><i>References</i></a></li>
+                  <li><a href="#"><i><span class="email">{{user.email}}</span></i></a></li>
+                  <li> <a class="waves-effect waves-light orange lighten-2 btn blue-text text-darken-2" href="/auth/logout"><i class="material-icons right"></i>Log Out</a></li>
+                </ul>
+          </div>
+           </div>
+               <div class="nav-content orange lighten-2 ">
+                <ul class="tabs tabs-transparent ">
+                  <li class="tab"><a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons blue-text text-darken-2" id="trigger">accessibility</i>EXERCISE</a> </li>
+                  <li class="tab"><a class="active blue-text text-darken-2" href="#test2">Dashboard</a></li>
+                  <li class="tab"><a class="blue-text text-darken-2" href="#test3">Saved Workouts</a></li>
+                </ul>
+              </div>
+          </nav>
+
+          <ul class="sidenav right" id="mobile-demo">
+            <li><a href="#about"><i>About us</i></a></li>
+            <li><a href="#about"><i>References</i></a></li>
+            <li><a href="#"><span class="email">{{user.email}}</span></a></li>
+            <li> <a class="waves-effect waves-light orange lighten-2 btn blue-text text-darken-2" href="/auth/logout"><i class="material-icons right"></i>Log Out</a></li>
+          </ul>
+
+            {{!-- <div id="test2" class="col s12">Test 2</div>
+            <div id="test3" class="col s12">Test 3</div> --}}
+
+
+
         {{else}}
         <nav>
            <div class="nav-wrapper blue accent-4">
