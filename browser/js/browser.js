@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', function () { M.AutoInit() })
 document.addEventListener('DOMContentLoaded', function () {
     var elems = document.querySelectorAll('.dropdown-trigger');
 });
-
 // Carousel and Initialization
 var instance = M.Carousel.init({
     fullWidth: true,
@@ -38,6 +37,7 @@ function generateDropdownList() {
     for (i = 0; i < equipment.length; i++) {
         eq_li = document.createElement('li')
         eq_li.setAttribute('id', `E${i}`)
+        eq_li.setAttribute('class', 'sidenav-close')
         eq_li.innerText = equipment[i]
         eq_ul.appendChild(eq_li)
         eq_li.addEventListener('click', fetchWorkout)
@@ -45,7 +45,8 @@ function generateDropdownList() {
     // TARGETMUSCLE DROPDOWN
     for (i = 0; i < targetMuscle.length; i++) {
         tm_li = document.createElement('li')
-        tm_li.setAttribute('id', `B${i}`)
+        tm_li.setAttribute('id', `M${i}`)
+        tm_li.setAttribute('class', 'sidenav-close')
         tm_li.innerText = targetMuscle[i]
         tm_ul.appendChild(tm_li)
         tm_li.addEventListener('click', fetchWorkout)
@@ -53,7 +54,8 @@ function generateDropdownList() {
     // BODYPART DROPDOWN
     for (i = 0; i < bodypart.length; i++) {
         bp_li = document.createElement('li')
-        bp_li.setAttribute('id', `M${i}`)
+        bp_li.setAttribute('id', `B${i}`)
+        bp_li.setAttribute('class', 'sidenav-close')
         bp_li.innerText = bodypart[i]
         bp_ul.appendChild(bp_li)
         bp_li.addEventListener('click', fetchWorkout)
@@ -111,7 +113,6 @@ function createCards(data) {
     cardContainer.innerHTML = '';
     for (i = 0; i < data.length; i++) {
         document.getElementById("cardContainer").innerHTML += `
-    
             <div class="card card-div col 3">
                 <div class="card-content">
                   <span class="card-title activator grey-text text-darken-4">${data[i].name}<i class="material-icons right">more_vert</i></span>
@@ -121,21 +122,13 @@ function createCards(data) {
                 </div>
                 <div class="card-reveal">
                   <span class="card-title grey-text text-darken-4">${data[i].name}<i class="material-icons right">close</i></span>
-                  <p>${data[i].bodyPart}</p>
-                  <p>${data[i].equipment}</p>
+                  <p>Body Part: ${data[i].bodyPart}</p>
+                  <p>Target Muscle: ${data[i].target}</p>
+                  <p>Equipment: ${data[i].equipment}</p>
                 </div>
             </div>`
 
     }
-    // ElSaveBtn = document.querySelector('#cardContainer');
-    // // console.log(ElSaveBtn)
-    // ElSaveBtn.addEventListener('click', (data) => {
-    //     console.log(event)
-    //     console.log('clicked')
-    //     })
-    // function myFuncConsole(data){
-    //     console.log(data)
-    // }
 }
 
 // FETCH WORKOUT
