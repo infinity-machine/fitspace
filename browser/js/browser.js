@@ -5,14 +5,13 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // Carousel and Initialization
+
 var instance = M.Carousel.init({
+
     fullWidth: true,
     indicators: true
 });
 
-var instance = M.Carousel.init({
-    fullWidth: true
-});
 // DROPDOWN ARRAYS
 const equipment = ["assisted", "band", "barbell", "body weight", "bosu ball", "cable", "dumbbell", "elliptical machine", "ez barbell", "hammer", "kettlebell", "leverage machine",
     "medicine ball", "olympic barbell", "resistance band", "roller", "rope", "skierg machine", "sled machine", "smith machine", "stability ball", "stationary bike",
