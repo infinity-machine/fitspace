@@ -10,7 +10,7 @@ auth_router.post('/register', isLoggedIn, (req, res) => {
     }
     User.findOne({
         where: {
-            email
+            email: email
         }
     }).then(user => {
         if (user) {
