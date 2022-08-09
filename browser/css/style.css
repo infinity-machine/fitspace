@@ -32,14 +32,6 @@ main {
   overflow: visible;
 }
 
-.card-image {
-  /* height: 50% */
-}
-
-.card-content {
-
-}
-
 .saveBtn {
   position: absolute;
   bottom: 0;

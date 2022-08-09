@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', function () { M.AutoInit() })
 document.addEventListener('DOMContentLoaded', function () {
     var elems = document.querySelectorAll('.dropdown-trigger');
 });
-
 // Carousel and Initialization
 var instance = M.Carousel.init({
     fullWidth: true,
@@ -25,19 +24,15 @@ var eq_ul = document.getElementById('Equipment');
 var bp_ul = document.getElementById('BodyPart')
 var tm_ul = document.getElementById('TargetMuscle')
 var trigger = document.getElementById('trigger')
-trigger.addEventListener('click', generateDropdownList)
 
 // GENERATE DROPDOWN LISTS
 function generateDropdownList() {
-    eq_ul.innerHTML = '';
-    bp_ul.innerHTML = '';
-    tm_ul.innerHTML = '';
-
 
     // EQUIPMENT DROPDOWN
     for (i = 0; i < equipment.length; i++) {
         eq_li = document.createElement('li')
         eq_li.setAttribute('id', `E${i}`)
+        eq_li.setAttribute('class', 'sidenav-close')
         eq_li.innerText = equipment[i]
         eq_ul.appendChild(eq_li)
         eq_li.addEventListener('click', fetchWorkout)
@@ -46,6 +41,7 @@ function generateDropdownList() {
     for (i = 0; i < targetMuscle.length; i++) {
         tm_li = document.createElement('li')
         tm_li.setAttribute('id', `M${i}`)
+        tm_li.setAttribute('class', 'sidenav-close')
         tm_li.innerText = targetMuscle[i]
         tm_ul.appendChild(tm_li)
         tm_li.addEventListener('click', fetchWorkout)
@@ -54,6 +50,7 @@ function generateDropdownList() {
     for (i = 0; i < bodypart.length; i++) {
         bp_li = document.createElement('li')
         bp_li.setAttribute('id', `B${i}`)
+        bp_li.setAttribute('class', 'sidenav-close')
         bp_li.innerText = bodypart[i]
         bp_ul.appendChild(bp_li)
         bp_li.addEventListener('click', fetchWorkout)
@@ -61,23 +58,6 @@ function generateDropdownList() {
 }
 // CREATE SINGLE WORKOUT CARD
 var cardContainer = document.getElementById('cardContainer')
-
-//Save Button 
-// const ElSaveBtn = document.querySelector('.saveBtn');
-
-// ElSaveBtn.addEventListener('click', async _ => {
-//   try {     
-//     const response = await fetch('/save', {
-//       method: 'post',
-//       body: {
-//         // Your body
-//       }
-//     });
-//     console.log('Completed!', response);
-//   } catch(err) {
-//     console.error(`Error: ${err}`);
-//   }
-// })
 
 function myFuncConsole(data) {
     let val = data.target.dataset
@@ -90,8 +70,6 @@ function myFuncConsole(data) {
         target: val.target,
     }
 
-    // console.log(testObj)
-
     fetch('/posts/save', {
         method: 'post',
         headers: {
@@ -101,8 +79,6 @@ function myFuncConsole(data) {
     }).then(res => {
         console.log("Request complete! response:", res)
     })
-
-
 }
 
 
@@ -111,7 +87,6 @@ function createCards(data) {
     cardContainer.innerHTML = '';
     for (i = 0; i < data.length; i++) {
         document.getElementById("cardContainer").innerHTML += `
-    
             <div class="card card-div col 3">
                 <div class="card-content">
                   <span class="card-title activator grey-text text-darken-4">${data[i].name}<i class="material-icons right">more_vert</i></span>
@@ -121,21 +96,13 @@ function createCards(data) {
                 </div>
                 <div class="card-reveal">
                   <span class="card-title grey-text text-darken-4">${data[i].name}<i class="material-icons right">close</i></span>
-                  <p>${data[i].bodyPart}</p>
-                  <p>${data[i].equipment}</p>
+                  <p>Body Part: ${data[i].bodyPart}</p>
+                  <p>Target Muscle: ${data[i].target}</p>
+                  <p>Equipment: ${data[i].equipment}</p>
                 </div>
             </div>`
 
     }
-    // ElSaveBtn = document.querySelector('#cardContainer');
-    // // console.log(ElSaveBtn)
-    // ElSaveBtn.addEventListener('click', (data) => {
-    //     console.log(event)
-    //     console.log('clicked')
-    //     })
-    // function myFuncConsole(data){
-    //     console.log(data)
-    // }
 }
 
 // FETCH WORKOUT
@@ -171,3 +138,4 @@ function fetchWorkout() {
         .catch(err => console.error(err));
 }
 
+generateDropdownList()
