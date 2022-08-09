@@ -47,7 +47,7 @@ function generateDropdownList() {
     // TARGETMUSCLE DROPDOWN
     for (i = 0; i < targetMuscle.length; i++) {
         tm_li = document.createElement('li')
-        tm_li.setAttribute('id', `B${i}`)
+        tm_li.setAttribute('id', `M${i}`)
         tm_li.innerText = targetMuscle[i]
         tm_ul.appendChild(tm_li)
         tm_li.addEventListener('click', fetchWorkout)
@@ -55,7 +55,7 @@ function generateDropdownList() {
     // BODYPART DROPDOWN
     for (i = 0; i < bodypart.length; i++) {
         bp_li = document.createElement('li')
-        bp_li.setAttribute('id', `M${i}`)
+        bp_li.setAttribute('id', `B${i}`)
         bp_li.innerText = bodypart[i]
         bp_ul.appendChild(bp_li)
         bp_li.addEventListener('click', fetchWorkout)
