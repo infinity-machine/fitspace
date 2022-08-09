@@ -9,31 +9,31 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="https://img.icons8.com/external-xnimrodx-lineal-color-xnimrodx/64/000000/external-gym-fitness-and-gym-xnimrodx-lineal-color-xnimrodx-4.png">
 </head>
 
 <body>
   <header>
         {{#if user}}
 
-        
-
+      
         <nav class="nav-extended">
            <div class="nav-wrapper blue accent-4 ">
           <div class="container">
             <a href="/" class="brand-logo"><i class="material-icons">directions_run</i>FitSpace</a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
+            <a href="" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
                   <li><a href="#page-footer"><i>About us</i></a></li>
                   <li><a href="#page-footer"><i>References</i></a></li>
                   <li><a href="#"><i><span class="email">{{user.email}}</span></i></a></li>
-                  <li> <a class="waves-effect waves-light orange lighten-2 btn blue-text text-darken-2" href="/auth/logout"><i class="material-icons right"></i>Log Out</a></li>
+                  <li><a class="waves-effect waves-light orange lighten-2 btn blue-text text-darken-2" href="/auth/logout"><i class="material-icons right"></i>Log Out</a></li>
                 </ul>
           </div>
            </div>
                <div class="nav-content orange lighten-2 ">
                 <ul class="tabs tabs-transparent ">
                   <li class="tab"><a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons blue-text text-darken-2" id="trigger">accessibility</i>EXERCISE</a> </li>
-                  <li class="tab"><a class="active blue-text text-darken-2" href="#test2">Dashboard</a></li>
+                  <li class="tab"><a class="active blue-text text-darken-2" href="Dashboard">Dashboard</a></li>
                   <li class="tab"><a class="blue-text text-darken-2" href="/saved" target="_self">Saved Workouts</a></li>
                 </ul>
               </div>
@@ -55,7 +55,7 @@
                 <div class="col s12 ">
                 <div class="card">
                     <div class="card-image">
-                    <img src="https://cdn.pixabay.com/photo/2016/11/22/22/24/adult-1850925_960_720.jpg">
+                    <img height="700px"src="https://cdn.pixabay.com/photo/2016/11/22/22/24/adult-1850925_960_720.jpg" >
                     <span class="card-title">Hello {{user.username}}</span>
                     </div>
                     <div class="card-content">
@@ -70,56 +70,12 @@
             
             </div>
         </div>
-
-        {{!-- <div class="container">
-            <div class="col s12">
-                <div class="row">
-                <div class="col s12 ">
-                <div class="card">
-                    <div class="card-image">
-                    <img src="https://cdn.pixabay.com/photo/2015/07/02/10/27/training-828764_1280.jpg">
-                    <span class="card-title">Work out name</span>
-                    </div>
-                    <div class="card-content">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos dolorum doloremque magnam necessitatibus veniam incidunt adipisci, repudiandae vero aspernatu
-                        r iusto sunt odit doloribus numquam quidem voluptate recusandae non tempore? Fugit! </p>
-                    </div>
-                    <div class="card-action">
-                    <a href="#">This is a link</a>
-                    </div>
-                </div>
-                </div>
-            </div>
-            </div>
-        </div> --}}
-        {{!-- <div class="container">
-            <div class="col s12">
-                <div class="row">
-                <div class="col s12 ">
-                <div class="card">
-
-                    <div class="card-content">
-                    <p>I am a very simple card. I am good at containing small bits of information.
-                    I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                    <a href="#">This is a link</a>
-                    </div>
-                </div>
-                </div>
-            </div>
-            </div>
-        </div> --}}
-
     </div>
-
-            {{!-- <div id="test3" class="col s12">Test 3</div> --}}
-
-
 
         {{else}}
         <nav>
            <div class="nav-wrapper blue accent-4">
+            <a href="#!" class="brand-logo"><i class="material-icons">directions_run</i>FitSpace</a>
             <a href="/" class="brand-logo"><i class="material-icons">directions_run</i>FitSpace</a>
               <div class="right"> 
                 <a class="waves-effect waves-light orange lighten-2 btn blue-text text-darken-2 hoverable" href="/login">Log In</a>
@@ -130,19 +86,13 @@
       {{/if}}
   </header>
 
-
-
-
   <main>
     {{{body}}}
   </main>
 
-
       <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="js/browser.js"></script>
-
-
 
 </body>
 <footer id="page-footer" class="page-footer col s12 blue accent-4">
