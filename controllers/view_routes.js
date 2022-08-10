@@ -31,6 +31,7 @@ view_router.get('/register', isLoggedIn, (req, res) => {
     res.render('register', { errors: req.session.errors});
 });
 //---------------------ADDED saved view router----------------------------
+
 view_router.get('/saved', isLoggedIn, (req, res) => {
     const user_id = req.session.user_id;
     if (user_id) {
@@ -57,6 +58,7 @@ view_router.get('/saved', isLoggedIn, (req, res) => {
     }
     res.render('saved');
 });
+
 //------------------------------------------------------
 
 module.exports = view_router;
