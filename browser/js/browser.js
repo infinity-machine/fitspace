@@ -88,16 +88,17 @@ function createCards(data) {
         document.getElementById("cardContainer").innerHTML += `
             <div class="card card-div col 3">
                 <div class="card-content">
-                  <span class="card-title activator grey-text text-darken-4">${data[i].name}<i class="material-icons right">more_vert</i></span>
+                  <span id="exerciseCards" class="card-title activator grey-text text-darken-4">${data[i].name}<i class="material-icons right">more_vert</i></span>
                 </div>
                 <div class="card-image waves-effect waves-block waves-light">
                   <img class="activator" src="${data[i].gifUrl}">
                 </div>
                 <div class="card-reveal">
                   <span class="card-title grey-text text-darken-4">${data[i].name}<i class="material-icons right">close</i></span>
-                  <p>Body Part: ${data[i].bodyPart}</p>
-                  <p>Target Muscle: ${data[i].target}</p>
-                  <p>Equipment: ${data[i].equipment}</p>
+                  <p class="exerciseInfo">Body Part: ${data[i].bodyPart}</p>
+                  <p class="exerciseInfo">Target Muscle: ${data[i].target}</p>
+                  <p class="exerciseInfo">Equipment: ${data[i].equipment}</p>
+                  <button class="saveBtn" data-bodyPart="${data[i].bodyPart}" data-equipment="${data[i].equipment}" data-gifUrl="${data[i].gifUrl}" data-id="${data[i].id}" data-name="${data[i].name}" data-target="${data[i].target}"  onClick="myFuncConsole(event)">SAVE</button>
                 </div>
             </div>`
     }
