@@ -80,7 +80,6 @@ function myFuncConsole(data) {
         console.log("Request complete! response:", res)
     })
 }
-
 // CREATE MULTIPLE WORKOUT CARDS
 function createCards(data) {
     cardContainer.innerHTML = '';
@@ -98,6 +97,7 @@ function createCards(data) {
                   <p>Body Part: ${data[i].bodyPart}</p>
                   <p>Target Muscle: ${data[i].target}</p>
                   <p>Equipment: ${data[i].equipment}</p>
+                  <button class="saveBtn" data-bodyPart="${data[i].bodyPart}" data-equipment="${data[i].equipment}" data-gifUrl="${data[i].gifUrl}" data-id="${data[i].id}" data-name="${data[i].name}" data-target="${data[i].target}"  onClick="myFuncConsole(event)">SAVE</button>
                 </div>
             </div>`
     }
