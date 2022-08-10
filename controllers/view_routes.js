@@ -58,7 +58,7 @@ view_router.get('/saved', isLoggedIn, (req, res) => {
             res.render('saved', {user});
         }).catch( err => console.log(err))
     }
-    // res.render('saved');
+    res.redirect('/register');
 });
 
 //------------------------------------------------------
