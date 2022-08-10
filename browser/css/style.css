@@ -23,19 +23,59 @@ main {
 }
 
 .card-div {
-  
+  align-items: flex-start !important;
+  margin: 25px !important;
+  padding:25px !important;
+  background-color: rgb(41,98,255);
+  color: white !important;
+  border-radius: 10px;
 }
 
+.exerciseInfo{
+  padding: 25px;
+  text-align: center;
+  align-items: center;
+}
+#exerciseCards{
+  color: white !important;
+  text-align: center;
+}
 .card-title {
-  color: black !important;
   position: absolute;
   top: 0;
-  left: 0;
-  overflow: visible;
+}
+.card-reveal {
+  background-color: rgb(255, 183, 77);
+  color:rgb(41,98,255);
 }
 
+
 .saveBtn {
+  background-color: rgb(255, 183, 77);
+  color:rgb(41,98,255);
   position: absolute;
   bottom: 0;
-  right: 0;
+  margin-bottom: 15px;
+  padding: 5px;
+  border-color: rgb(255, 183, 77);
+  border-radius: 10px;
+}
+.savedWorkouts {
+  display: flex;
+  flex-wrap: wrap;
+  
+  
+}
+#ExerciseCard {
+  margin: 15px !important;
+  padding:50px !important;
+  background-color: rgb(41,98,255);
+  color: white !important;
+  border-radius: 10px;
+  width: 400px;
+  height: 600px;
+}
+
+#savedCardContent {
+  background-color:rgb(41,98,255);
 }

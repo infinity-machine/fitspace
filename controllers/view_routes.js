@@ -3,7 +3,6 @@ const { isLoggedIn } = require('./helpers');
 const User = require('../models/User');
 const Saved = require('../models/Saved');
 
-
 view_router.get('/', isLoggedIn, (req, res) => {
     const user_id = req.session.user_id;
     if (user_id) {
