@@ -40,11 +40,13 @@ view_router.get('/saved', isLoggedIn, (req, res) => {
                 id: user_id
             },
             include: Saved,
-            attributes: {exclude: ['password'] }
+            attributes: ['id', 'email', 'username']
         })
-        .then( user_data => {
-            user_data = {
-                saved: user_data.saveds.map(save => ({
+        .then( user => {
+            user = {
+                username: user.username,
+                email: user.email,
+                saved: user.saveds.map(save => ({
                     bodyPart: save.bodyPart,
                     equipment: save.equipment,
                     gifUrl: save.gifUrl,
@@ -52,11 +54,11 @@ view_router.get('/saved', isLoggedIn, (req, res) => {
                     target: save.target
                 }))
             };
-            console.log(user_data)
-            res.render('saved', {user_data});
+            // console.log(user)
+            res.render('saved', {user});
         }).catch( err => console.log(err))
     }
-    res.render('saved');
+    // res.render('saved');
 });
 
 //------------------------------------------------------
